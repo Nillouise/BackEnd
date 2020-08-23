@@ -15,7 +15,10 @@ plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.3.72'
     id "org.jruyi.thrift" version "0.4.1"
+    id 'checkstyle'
 }
+
+
 
 group 'org.maho'
 version '1.0-SNAPSHOT'
@@ -44,6 +47,10 @@ compileThrift {
     thriftExecutable 'thrift-0.13.0.exe'
     generator 'html'
     generator 'java', 'private-members'
+}
+
+checkstyle {
+    toolVersion = '8.35'
 }
 
 tasks.withType(JavaCompile) {
